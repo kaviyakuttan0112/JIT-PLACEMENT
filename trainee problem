@@ -1,0 +1,66 @@
+//1 step--->get input from user
+//step 2--->calculate average
+//step 3--->finding maximum value in average array
+//step 4--->display fit trainee
+//if we are using two dimensional arry then use 2 for loop if one then use one for loop.
+
+
+
+#include <stdio.h>
+
+int main()
+{
+    int trainee[3][3];
+    int i,j,sum,max=0,average[i];
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            scanf("%d",&trainee[i][j]);
+            if(trainee[i][j]<1 || trainee[i][j]>100)
+            {
+                trainee[i][j]=0;
+            }
+        }
+    }
+    
+    
+    //calculate average
+    for(i=0;i<3;i++)
+    { 
+        sum=0;
+        for(j=0;j<3;j++)
+        {
+            sum=sum+trainee[i][j];
+        }
+        average[i]=sum/3;
+    }
+    
+    
+    //finding max in average array
+    //avg[0]=92 avg[1]=91avg[2]=92
+    for(i=0;i<3;i++)
+    {
+        if(average[i]>max)//92>0
+        {
+            max=average[i];//max=92
+        }
+        
+    }
+    
+    
+    //display fit trainee
+    for(i=0;i<3;i++)
+    {
+        if(average[i]==max)
+        {
+            printf("/n Trainee number: %d",(i+1));
+        }
+        if(average[i]<=70)
+        {
+            printf("trainee is unfit");
+        }
+    }
+            
+     return 0;
+}
